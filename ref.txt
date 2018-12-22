@@ -1,0 +1,6 @@
+Here are the references：
+https://github.com/Trujillo94/Tracking-a-ball-with-matlab
+https://en.wikipedia.org/wiki/Otsu%27s_method 
+https://www.mathworks.com/help/images/ref/bwareaopen.html
+https://www.mathworks.com/help/images/ref/imdilate.html
+https://www.mathworks.com/help/images/ref/strel.html?searchHighlight=strel&s_tid=doc_srchtitle
