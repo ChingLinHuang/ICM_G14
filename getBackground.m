@@ -1,4 +1,4 @@
-function [background] = getBackground(movie, pix,n)
+function [background] = getBackground(movie,pix,n)
 % This is a function to get the background
 %----------------Inputs---------------------------------------
 %   pix: remove objects that are smaller than pix pixel
