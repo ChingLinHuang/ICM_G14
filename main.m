@@ -1,12 +1,15 @@
 video = VideoReader('C:\ICM_project\video\testVideo.mp4');
-nFrames = video.NumberOfFrames;
-% figure
-for k = 1 : nFrames
-    mov(k).rgb = read(video,k);
-    mov(k).gray = rgb2gray(mov(k).rgb);
-%     imshow(mov(k).gray);
-%     fprintf('%f', k);
+movie = getStructure(video);
+
+
+background = getBackground(movie,20,10);
+%find the ball
+for k = 1:movie.nFrames
+[ balls, difference ] = detectBall(movie.mov(k).gray,background,0,1,10);
+movie.mov(k).balls = balls;
+movie.mov(k).difference = difference;
+
 end
 
-movie.mov = mov;
-movie.nFrames = nFrames;
+makevideo(movie, 'testFunction_difference.avi', 'testFunction_balls.avi');
+
