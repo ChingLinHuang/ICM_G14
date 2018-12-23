@@ -4,3 +4,5 @@ https://en.wikipedia.org/wiki/Otsu%27s_method
 https://www.mathworks.com/help/images/ref/bwareaopen.html
 https://www.mathworks.com/help/images/ref/imdilate.html
 https://www.mathworks.com/help/images/ref/strel.html?searchHighlight=strel&s_tid=doc_srchtitle
+https://www.mathworks.com/help/images/ref/bwlabeln.html?searchHighlight=bwlabeln&s_tid=doc_srchtitle
+https://www.mathworks.com/help/images/ref/imclose.html?searchHighlight=imclose&s_tid=doc_srchtitle
