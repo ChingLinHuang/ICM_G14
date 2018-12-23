@@ -1,11 +1,19 @@
-function [] = makevideo(background, movie, newVideoName)
+function [] = makevideo(movie, videoName1, videoName2)
+%This is a function to export video
 
-v = VideoWriter(newVideoName);
 nFrames = movie.nFrames
+v = VideoWriter(videoName1);
 open(v)
 for i=1:nFrames
-    frame = imabsdiff(background,movie.mov(i).gray);
-    %frame(:,width+2, :) = 0;
-    writeVideo(v, frame);
+    writeVideo(v, movie.mov(i).difference);
 end
 close(v)
+
+
+w = VideoWriter(videoName2);
+open(w)
+for i=1:nFrames
+    writeVideo(w, movie.mov(i).balls);
+end
+close(w)
+
