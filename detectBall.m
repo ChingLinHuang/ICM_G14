@@ -1,9 +1,10 @@
-function [ balls, difference] = detectBall( frame, background, f, pix_min, nd )
+function [ balls, test2] = detectBall( frame, background, f, pix_min, pix_max,nd )
 %test
-%frame = movie.mov(50).gray;
-%f=0.01;
-%pix_min = 190;
-%nd =50;
+%frame = movie.mov(58).gray;
+%f=0.7;
+%pix_min = 80;
+%pix_max = 800;
+%nd =10;
 
 difference = imabsdiff(frame, background);
 differenceMed = mean(mean(double(difference)));
@@ -12,12 +13,18 @@ dif = double(difference).^2-differenceMed^2;
 difMed = mean(mean(dif));
 
 bw = (dif>difMed*f);
-test1=bw;
+test1=uint8(bw*255);
+%remove small objects
 bw = bwareaopen(bw, pix_min);
-test2=bw;
+test2=uint8(bw*255);
+
 SE = strel('disk', nd);
 bw = imclose(bw, SE);
 test3 = bw;
+
+%remove big objects
+bw = bw - bwareaopen(bw,pix_max);
+test4 = bw;
 
 [balls, nCG] = bwlabeln(bw);
 
@@ -32,4 +39,4 @@ end
 balls = uint8(balls*255);
 
 %imshow(movie.mov(60).rgb)
-%imshow(difference)
+%imshow(balls)
