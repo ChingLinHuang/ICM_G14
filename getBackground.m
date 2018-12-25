@@ -7,8 +7,8 @@ function [background] = getBackground(movie,pix,n)
 nFrames = movie.nFrames
 mov = movie.mov
 %----------------Setting index of frames----------------
-fr_ind1 = 1;
-fr_ind2 = 2;
+fr_ind1 = 100;
+fr_ind2 = 101;
 back_ind = 45;
 
 frame1 = mov(fr_ind1).gray;
