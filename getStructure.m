@@ -9,14 +9,14 @@ function [ movie ] = getStructure( video )
 
 %test
 %video = VideoReader('C:\ICM_project\video\testVideo2.mp4');
-%%cut_left = 1100;
-%cut_right = 1280;
+cut_right = 1100;
+%cut_left = 0;
 
 nFrames = video.NumberOfFrames;
 % figure
 for k = 1 : nFrames
     movie.mov(k).rgb = read(video,k); %2* PERQUE PILLA PARELLES DE FRAMES IGUALS (ES AIXI A TOTS ELS VIDEOS?? 
-    movie.mov(k).gray = rgb2gray(movie.mov(k).rgb);
+    movie.mov(k).gray = rgb2gray(movie.mov(k).rgb(:,1:cut_right,:));
 %    movie.mov(k).gray(:,cut_left:cut_right)=0;
 %     fprintf('%f', k);
 end
