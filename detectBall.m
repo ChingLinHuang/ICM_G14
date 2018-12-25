@@ -1,12 +1,11 @@
-function [ balls, position] = detectBall( frame, background, f, pix_min1,pix_min2, pix_max,nd, med_inf)
+function [ balls, position] = detectBall( frame, background, f, pix_min, pix_max,nd)
 %test
-%frame = movie.mov(58).gray;
-%f=0.7;
-%pix_min1 = 80;
-%pix_min2 = 50;
+%frame = movie.mov(49).gray;
+%f=1.5;
+%pix_min = 25;
 %pix_max = 800;
 %nd =10;
-%med_inf = 400;
+%med_inf = 140;
 
 difference = imabsdiff(frame, background);
 differenceMed = mean(mean(double(difference)));
@@ -15,20 +14,18 @@ dif = double(difference).^2-differenceMed^2;
 difMed = mean(mean(dif));
 
 bw = (dif>difMed*f);
-test1=uint8(bw*255);
+%test1=uint8(bw*255);
 %remove small objects
-bw = bwareaopen(bw, pix_min1);
-test2=uint8(bw*255);
+bw = bwareaopen(bw, pix_min);
+%test2=uint8(bw*255);
 
 SE = strel('disk', nd);
 bw = imclose(bw, SE);
-test3 = bw;
-bw = bwareaopen(bw, pix_min2);
-test31=uint8(bw*255);
+%test3 = bw;
 
 %remove big objects
 bw = bw - bwareaopen(bw,pix_max);
-test4 = bw;
+%test4 = bw;
 
 [balls, nCG] = bwlabeln(bw);
 
@@ -42,6 +39,9 @@ for i=1:nCG
 end
 
 [row column] = getPosition(balls);
+position = [row column];
+balls = uint8(balls*255);
+%{
 if (med > med_inf)  & (row>0)
     position = [row column];
     balls = uint8(balls*255);
@@ -49,3 +49,6 @@ else
     position =[0 0];
     balls = (balls == balls)*0;
 end
+%}    
+%imshow(movie.mov(60).rgb)
+%imshow(balls)
