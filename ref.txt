@@ -7,3 +7,4 @@ https://www.mathworks.com/help/images/ref/strel.html?searchHighlight=strel&s_tid
 https://www.mathworks.com/help/images/ref/bwlabeln.html?searchHighlight=bwlabeln&s_tid=doc_srchtitle
 https://www.mathworks.com/help/images/ref/imclose.html?searchHighlight=imclose&s_tid=doc_srchtitle
 https://www.mathworks.com/matlabcentral/answers/222135-what-function-do-i-use-to-remove-large-object
+https://www.mathworks.com/help/matlab/ref/find.html?searchHighlight=find&s_tid=doc_srchtitle
