@@ -8,3 +8,4 @@ https://www.mathworks.com/help/images/ref/bwlabeln.html?searchHighlight=bwlabeln
 https://www.mathworks.com/help/images/ref/imclose.html?searchHighlight=imclose&s_tid=doc_srchtitle
 https://www.mathworks.com/matlabcentral/answers/222135-what-function-do-i-use-to-remove-large-object
 https://www.mathworks.com/help/matlab/ref/find.html?searchHighlight=find&s_tid=doc_srchtitle
+http://140.112.14.7/~measlab/course/2013/%E9%87%8F%E6%B8%AC%E6%8A%80%E8%A1%93%E6%87%89%E7%94%A8/2-%E6%95%B8%E4%BD%8D%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E6%8A%80%E8%A1%93%20(NTU).pdf
